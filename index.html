@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +16,7 @@
       margin: 0;
       background: #fff;
       color: #2a2a2a;
-      font-family: "Freight Text", "FreightText", "Freight Text Pro", Georgia, serif;
+      font-family: "Freight Text", Georgia, serif;
       font-size: 15px;
       line-height: 1.2;
       text-transform: lowercase;
@@ -50,69 +49,87 @@
       margin: 0;
     }
 
-    .bio { margin-bottom: 1em; }
-    .contact { margin-bottom: 1em; }
+    .bio {
+      margin-bottom: 1em;
+    }
 
-    .projects a { color: #2a2a2a; }
-    .projects a:hover { color: #0066ff; }
+    .contact {
+      margin-bottom: 1em;
+    }
 
-    .archive-title { margin-bottom: 0; }
-    .name { margin-bottom: 1em; }
+    .projects a {
+      color: #2a2a2a;
+      cursor: pointer;
+    }
+
+    .projects a:hover {
+      color: #0066ff;
+    }
+
+    .archive-title {
+      margin-bottom: 0;
+    }
+
+    .name {
+      margin-bottom: 1em;
+    }
 
     a {
       color: #ff00aa;
       text-decoration: underline;
-      cursor: pointer;
     }
 
     a:hover {
       color: #0066ff;
     }
 
-    /* MODAL */
+    /* 🔥 MODAL */
+
     .modal {
       display: none;
       position: fixed;
       inset: 0;
       background: rgba(255,255,255,0.7);
-      backdrop-filter: blur(4px);
-      z-index: 10;
+      backdrop-filter: blur(6px);
+      z-index: 100;
       align-items: center;
       justify-content: center;
     }
 
-   .modal-content {
-  position: relative;
-  width: 80vw;
-  height: 80vh;
-  background: white;
-  border: 1px solid #2a2a2a;
-  padding: 10px;
-  box-sizing: border-box;
-}
+    .modal-content {
+      width: 88vw;
+      height: 88vh;
+      background: white;
+      border: 1px solid #2a2a2a;
+      position: relative;
+    }
 
     .modal iframe {
       width: 100%;
       height: 100%;
       border: 0;
+      display: block;
     }
 
-    .close {
-      position: absolute;
-      top: -25px;
-      right: 0;
-      font-size: 14px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      color: #2a2a2a;
+    /* 🔥 MOBILE FULLSCREEN */
+    @media (max-width: 700px) {
+      .modal {
+        background: white;
+      }
+
+      .modal-content {
+        width: 100vw;
+        height: 100vh;
+        border: none;
+      }
     }
+
   </style>
 </head>
 
 <body>
 
-  <a class="instagram" href="https://www.instagram.com/siramolla/" target="_blank" rel="noopener noreferrer">
+  <a class="instagram" href="https://www.instagram.com/siramolla/" target="_blank">
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
       <rect x="3" y="3" width="18" height="18" rx="5"></rect>
       <circle cx="12" cy="12" r="4"></circle>
@@ -121,7 +138,7 @@
   </a>
 
   <main>
-    <img src="image_siramolla.png" alt="">
+    <img src="image_siramolla.png">
 
     <p class="name">sira mollá</p>
 
@@ -140,10 +157,7 @@
 
     <p class="projects">
       <a href="https://www.olimpic.tv/gentle-monster-bold-2025/" target="_blank">atiissu desert cowboy</a><br>
-
-      <!-- 👇 ESTE ES EL ÚNICO CAMBIO -->
       <a onclick="openModal('gentle-monster.html')">gentle monster bold</a><br>
-
       <a href="https://www.olimpic.tv/gentle-monster-bold-2025/" target="_blank">camperlab ss26</a><br>
       <a href="https://www.olimpic.tv/amaia-aralar/" target="_blank">amaia aralar music video</a><br>
       <a href="https://www.olimpic.tv/tokyo-legless/" target="_blank">save room games tokyo legless</a><br>
@@ -163,8 +177,24 @@
   <!-- MODAL -->
   <div class="modal" id="modal">
     <div class="modal-content">
-      <button class="close" onclick="closeModal()">close</button>
-      <iframe id="modalFrame" style="width:100%; height:100%; border:0; display:block;"></iframe>
+
+      <!-- 🔥 CLOSE -->
+      <button onclick="closeModal()" style="
+        position:absolute;
+        top:12px;
+        right:12px;
+        z-index:10;
+        background:rgba(255,255,255,0.8);
+        border:none;
+        padding:4px 6px;
+        font-size:14px;
+        cursor:pointer;
+      ">
+        close
+      </button>
+
+      <iframe id="modalFrame"></iframe>
+
     </div>
   </div>
 
