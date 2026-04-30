@@ -27,6 +27,26 @@
       max-width: 550px;
     }
 
+    img {
+      display: block;
+      width: 260px;
+      margin-top: -10px;
+      margin-left: -10px;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    a {
+      color: #ff00aa;
+      text-decoration: underline;
+    }
+
+    a:hover {
+      color: #0066ff;
+    }
+
     .instagram {
       position: absolute;
       top: 20px;
@@ -35,76 +55,64 @@
       line-height: 0;
     }
 
-    img {
-      display: block;
-      width: 260px;
-      margin-left: -10px;
-      margin-top: -10px;
+    .name,
+    .bio,
+    .contact {
+      margin-bottom: 1em;
     }
 
-    p { margin: 0; }
-
-    .bio { margin-bottom: 1em; }
-    .contact { margin-bottom: 1em; }
+    .archive-title {
+      margin-bottom: 0;
+    }
 
     .projects a {
       color: #2a2a2a;
       cursor: pointer;
     }
 
-    .projects a:hover { color: #0066ff; }
-
-    .archive-title { margin-bottom: 0; }
-    .name { margin-bottom: 1em; }
-
-    a {
-      color: #ff00aa;
-      text-decoration: underline;
+    .projects a:hover {
+      color: #0066ff;
     }
 
-    a:hover { color: #0066ff; }
-
-    /* MODAL */
-
+    /* Modal */
     .modal {
       display: none;
       position: fixed;
       inset: 0;
-      background: rgba(255,255,255,0.7);
-      backdrop-filter: blur(6px);
       z-index: 100;
       align-items: center;
       justify-content: center;
+      background: rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(0);
     }
 
     .modal-content {
+      position: relative;
       width: 88vw;
       height: 88vh;
-      background: white;
-      border: 1px solid #2a2a2a;
-      position: relative;
       overflow: hidden;
+      background: #fff;
+      border: 1px solid #2a2a2a;
     }
 
     .modal iframe {
       width: 100%;
       height: 100%;
-      border: 0;
       display: block;
+      border: 0;
     }
 
-    /* X fina */
     .close-btn {
       position: absolute;
       top: 16px;
       right: 16px;
+      z-index: 10;
       width: 18px;
       height: 18px;
-      background: none;
-      border: none;
       padding: 0;
       cursor: pointer;
-      z-index: 10;
+      background: none;
+      border: none;
     }
 
     .close-btn span {
@@ -124,10 +132,9 @@
       transform: rotate(-45deg);
     }
 
-    /* MOBILE FULLSCREEN + SAFE AREA */
     @media (max-width: 700px) {
       .modal {
-        background: white;
+        background: rgba(255, 255, 255, 0.25);
       }
 
       .modal-content {
@@ -142,16 +149,15 @@
       }
 
       .close-btn {
-  top: calc(32px + env(safe-area-inset-top));
-}
+        top: calc(32px + env(safe-area-inset-top));
+      }
     }
-
   </style>
 </head>
 
 <body>
 
-  <a class="instagram" href="https://www.instagram.com/siramolla/" target="_blank">
+  <a class="instagram" href="https://www.instagram.com/siramolla/" target="_blank" rel="noopener noreferrer" aria-label="instagram">
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
       <rect x="3" y="3" width="18" height="18" rx="5"></rect>
       <circle cx="12" cy="12" r="4"></circle>
@@ -160,13 +166,13 @@
   </a>
 
   <main>
-    <img src="image_siramolla.png">
+    <img src="image_siramolla.png" alt="">
 
     <p class="name">sira mollá</p>
 
     <p class="bio">
-      barcelona-based post producer and art director, executive producer at 
-      <a href="https://www.olimpic.tv/" target="_blank">olimpic.tv</a><br>
+      barcelona-based post producer and art director, executive producer at
+      <a href="https://www.olimpic.tv/" target="_blank" rel="noopener noreferrer">olimpic.tv</a><br>
       building complex image-making processes across film, fashion and advertising
     </p>
 
@@ -178,35 +184,32 @@
     <p class="archive-title">archive</p>
 
     <p class="projects">
-      <a href="https://www.olimpic.tv/gentle-monster-bold-2025/" target="_blank">atiissu desert cowboy</a><br>
+      <a href="https://www.olimpic.tv/gentle-monster-bold-2025/" target="_blank" rel="noopener noreferrer">atiissu desert cowboy</a><br>
       <a onclick="openModal('gentle-monster.html')">gentle monster bold</a><br>
-      <a href="https://www.olimpic.tv/gentle-monster-bold-2025/" target="_blank">camperlab ss26</a><br>
-      <a href="https://www.olimpic.tv/amaia-aralar/" target="_blank">amaia aralar music video</a><br>
-      <a href="https://www.olimpic.tv/tokyo-legless/" target="_blank">save room games tokyo legless</a><br>
-      <a href="https://www.olimpic.tv/balenciaga-fall-24/" target="_blank">balenciaga fall 24</a><br>
-      <a href="https://www.olimpic.tv/adidas-speedportal/" target="_blank">adidas football speedportal</a><br>
-      <a href="https://www.olimpic.tv/balmain-the-blaze/" target="_blank">balmain the blaze</a><br>
-      <a href="https://www.olimpic.tv/marc-jacobs-holiday-24/" target="_blank">marc jacobs holiday 24</a><br>
-      <a href="https://www.olimpic.tv/carnet-jove-2025/" target="_blank">gencat.cat carnet jove 25</a><br>
-      <a href="https://www.olimpic.tv/adidas-football-predator-ss24/" target="_blank">adidas football predator ss24</a><br>
-      <a href="https://www.olimpic.tv/desigualnot-the-same/" target="_blank">desigual not the same</a><br>
-      <a href="https://www.olimpic.tv/aldiohne-hype/" target="_blank">aldi ohne hype</a><br>
-      <a href="https://www.olimpic.tv/michael-kors-hollywood-film/" target="_blank">michael kors spring 23</a><br>
-      <a href="https://www.olimpic.tv/balmain-ss22/" target="_blank">balmain ss22</a><br>
+      <a href="https://www.olimpic.tv/gentle-monster-bold-2025/" target="_blank" rel="noopener noreferrer">camperlab ss26</a><br>
+      <a href="https://www.olimpic.tv/amaia-aralar/" target="_blank" rel="noopener noreferrer">amaia aralar music video</a><br>
+      <a href="https://www.olimpic.tv/tokyo-legless/" target="_blank" rel="noopener noreferrer">save room games tokyo legless</a><br>
+      <a href="https://www.olimpic.tv/balenciaga-fall-24/" target="_blank" rel="noopener noreferrer">balenciaga fall 24</a><br>
+      <a href="https://www.olimpic.tv/adidas-speedportal/" target="_blank" rel="noopener noreferrer">adidas football speedportal</a><br>
+      <a href="https://www.olimpic.tv/balmain-the-blaze/" target="_blank" rel="noopener noreferrer">balmain the blaze</a><br>
+      <a href="https://www.olimpic.tv/marc-jacobs-holiday-24/" target="_blank" rel="noopener noreferrer">marc jacobs holiday 24</a><br>
+      <a href="https://www.olimpic.tv/carnet-jove-2025/" target="_blank" rel="noopener noreferrer">gencat.cat carnet jove 25</a><br>
+      <a href="https://www.olimpic.tv/adidas-football-predator-ss24/" target="_blank" rel="noopener noreferrer">adidas football predator ss24</a><br>
+      <a href="https://www.olimpic.tv/desigualnot-the-same/" target="_blank" rel="noopener noreferrer">desigual not the same</a><br>
+      <a href="https://www.olimpic.tv/aldiohne-hype/" target="_blank" rel="noopener noreferrer">aldi ohne hype</a><br>
+      <a href="https://www.olimpic.tv/michael-kors-hollywood-film/" target="_blank" rel="noopener noreferrer">michael kors spring 23</a><br>
+      <a href="https://www.olimpic.tv/balmain-ss22/" target="_blank" rel="noopener noreferrer">balmain ss22</a><br>
     </p>
   </main>
 
-  <!-- MODAL -->
   <div class="modal" id="modal">
     <div class="modal-content">
-
-      <button class="close-btn" onclick="closeModal()">
+      <button class="close-btn" onclick="closeModal()" aria-label="close">
         <span></span>
         <span></span>
       </button>
 
       <iframe id="modalFrame"></iframe>
-
     </div>
   </div>
 
