@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>gentle monster bold</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #fff;
+      color: #2a2a2a;
+      font-family: "Freight Text", Georgia, serif;
+      font-size: 15px;
+      line-height: 1.2;
+      text-transform: lowercase;
+    }
+
+    main {
+      padding: 10px;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    .title {
+      margin-bottom: 10px;
+    }
+
+    .credits {
+      columns: 1;
+      column-gap: 40px;
+      margin-bottom: 10px;
+    }
+
+    @media (max-width: 700px) {
+      .credits {
+        columns: 1;
+      }
+    }
+
+    /* MEDIA BASE */
+    .media {
+      width: 100%;
+      display: block;
+    }
+
+    /* HERO VIDEO */
+    .hero-video {
+      margin-bottom: 10px;
+    }
+
+    /* DUMP (SIN ESPACIO ENTRE ELEMENTOS) */
+    .dump img,
+    .dump video {
+      margin: 0;
+    }
+
+    video {
+      background: #000;
+    }
+
+    /* BOTÓN MUTE */
+    .video-wrapper {
+      position: relative;
+    }
+
+    .mute-btn {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      background: rgba(0,0,0,0.6);
+      color: #fff;
+      border: none;
+      padding: 6px 8px;
+      font-size: 12px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+  <main>
+
+    <!-- 1. NAME -->
+    <p class="title">gentle monster bold</p>
+
+    <!-- 2. HERO VIDEO -->
+    <div class="video-wrapper hero-video">
+      <video id="gmVideo" class="media" autoplay muted loop playsinline preload="auto">
+        <source src="assets/gentle-monster/gentle-monster.mp4" type="video/mp4">
+      </video>
+
+      <button class="mute-btn" onclick="toggleMute()">sound</button>
+    </div>
+
+    <!-- 3. CREDITS -->
+    <p class="credits">
+      client: gentle monster<br>
+      starring: tilda swinton<br>
+      music: amnesia scanner<br>
+      creative direction: gentle monster<br>
+      director: mau morgó<br>
+      dop: mauro chiarello<br>
+      production company: prodco<br>
+      post house: olimpic<br>
+      ep: sira mollá<br>
+      vfx creative director: cesar rodrez<br>
+      vfx supervisor & cg lead: alex luque garcia<br>
+      coordinator: lucia serrano<br>
+      character design: noha manfredi<br>
+      costume designer: valeria baret<br>
+      lead animator: nacho conesa<br>
+      compositors: juan manuel reyes, nacho hoyos<br>
+      cg: alex luque garcia, daniel benza, javier polo, telmo garai, quim gonzalez<br>
+      mocap choreo & perf: marvalyra, pecado carnal
+    </p>
+
+    <!-- 4. DUMP (SIN ESPACIOS) -->
+    <div class="dump">
+
+      <img class="media" src="assets/gentle-monster/gm-01.jpg">
+      <img class="media" src="assets/gentle-monster/gm-02.jpg">
+
+      <video class="media" autoplay muted loop playsinline preload="auto">
+        <source src="assets/gentle-monster/gm-02.mp4" type="video/mp4">
+      </video>
+
+      <img class="media" src="assets/gentle-monster/gm-03.jpg">
+      <img class="media" src="assets/gentle-monster/gm-04.jpg">
+      <img class="media" src="assets/gentle-monster/gm-05.jpg">
+      <img class="media" src="assets/gentle-monster/gm-06.jpg">
+      <img class="media" src="assets/gentle-monster/gm-07.jpg">
+      <img class="media" src="assets/gentle-monster/gm-08.jpg">
+      <img class="media" src="assets/gentle-monster/gm-09.jpg">
+      <img class="media" src="assets/gentle-monster/gm-10.jpg">
+
+    </div>
+
+  </main>
+
+  <script>
+    const video = document.getElementById("gmVideo");
+
+    function toggleMute() {
+      video.muted = !video.muted;
+    }
+  </script>
+
+</body>
+</html>
