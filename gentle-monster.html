@@ -21,14 +21,14 @@
     }
 
     main {
-  padding: 12px 6px 6px 6px;
-}
+      padding: 12px 6px 6px;
+    }
 
-@media (max-width: 700px) {
-  main {
-    padding-top: 32px;
-  }
-}
+    @media (max-width: 700px) {
+      main {
+        padding-top: 32px;
+      }
+    }
 
     p {
       margin: 0;
@@ -39,29 +39,21 @@
     }
 
     .credits {
-      columns: 1;
-      column-gap: 40px;
       margin-bottom: 10px;
+      columns: 1;
     }
 
-    @media (max-width: 700px) {
-      .credits {
-        columns: 1;
-      }
-    }
+    /* MEDIA */
 
-    /* MEDIA BASE */
     .media {
       width: 100%;
       display: block;
     }
 
-    /* HERO VIDEO */
-    .hero-video {
+    .hero {
       margin-bottom: 10px;
     }
 
-    /* DUMP (SIN ESPACIO ENTRE ELEMENTOS) */
     .dump img,
     .dump video {
       margin: 0;
@@ -71,7 +63,8 @@
       background: #000;
     }
 
-    /* BOTÓN MUTE */
+    /* MUTE BUTTON */
+
     .video-wrapper {
       position: relative;
     }
@@ -94,11 +87,11 @@
 
   <main>
 
-    <!-- 1. NAME -->
+    <!-- NAME -->
     <p class="title">gentle monster bold</p>
 
-    <!-- 2. HERO VIDEO -->
-    <div class="video-wrapper hero-video">
+    <!-- HERO VIDEO -->
+    <div class="video-wrapper hero">
       <video id="gmVideo" class="media" autoplay muted loop playsinline preload="auto">
         <source src="assets/gentle-monster/gentle-monster.mp4" type="video/mp4">
       </video>
@@ -106,7 +99,7 @@
       <button class="mute-btn" onclick="toggleMute()">sound</button>
     </div>
 
-    <!-- 3. CREDITS -->
+    <!-- CREDITS -->
     <p class="credits">
       client: gentle monster<br>
       starring: tilda swinton<br>
@@ -128,7 +121,7 @@
       mocap choreo & perf: marvalyra, pecado carnal
     </p>
 
-    <!-- 4. DUMP (SIN ESPACIOS) -->
+    <!-- DUMP -->
     <div class="dump">
 
       <img class="media" src="assets/gentle-monster/gm-01.jpg">
