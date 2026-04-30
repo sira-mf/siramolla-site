@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>gentle monster bold</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #fff;
+      color: #2a2a2a;
+      font-family: "Freight Text", Georgia, serif;
+      font-size: 15px;
+      line-height: 1.2;
+      text-transform: lowercase;
+    }
+
+    main {
+      padding: 12px 6px 6px;
+    }
+
+    @media (max-width: 700px) {
+      main {
+        padding-top: 32px;
+      }
+    }
+
+    p {
+      margin: 0;
+    }
+
+    .title {
+      margin-bottom: 10px;
+    }
+
+    .credits {
+      margin-bottom: 10px;
+      columns: 1;
+    }
+
+    /* MEDIA */
+
+    .media {
+      width: 100%;
+      display: block;
+    }
+
+    .hero {
+      margin-bottom: 10px;
+    }
+
+    .dump img,
+    .dump video {
+      margin: 0;
+    }
+
+    video {
+      background: #000;
+    }
+
+    /* MUTE BUTTON */
+
+    .video-wrapper {
+      position: relative;
+    }
+
+    .mute-btn {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      background: rgba(0,0,0,0.6);
+      color: #fff;
+      border: none;
+      padding: 6px 8px;
+      font-size: 12px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+  <main>
+
+    <!-- NAME -->
+    <p class="title">atiissu desert cowboy</p>
+
+    <!-- HERO VIDEO -->
+    <div class="video-wrapper hero">
+      <video id="gmVideo" class="media" autoplay muted loop playsinline preload="auto">
+        <source src="assets/atiissu-desert-cowboy/atiissu-desert-cowboy.mp4" type="video/mp4">
+      </video>
+
+      <button class="mute-btn" onclick="toggleMute()">sound</button>
+    </div>
+
+    <!-- CREDITS -->
+    <p class="credits">
+client: atiissu<br>
+starring: yong lixx<br>
+director: mau morgó<br>
+production company: prodco<br>
+prodco co-founders / eps: ian pons jewell, zico judge<br>
+md: jon adams<br>
+ep: ella toal-gangar<br>
+hop: sam levene<br>
+producer: polly du plessis<br>
+production assistant: maisie spratt<br>
+1st ad: james sharpe<br>
+dop: mauro chiarello<br>
+production designer: arthur de borman<br>
+casting director: frankie spence<br>
+creative development: irl work<br>
+post house: olimpic<br>
+vfx creative director & ad: cesar rodrez<br>
+ep: sira mollá<br>
+post coordinator: dafne vázquez<br>
+concept art & character design: noha manfredi<br>
+character design & texturing: valeria baret<br>
+previs & lead animation: nacho conesa<br>
+rigging: demeter dzadik<br>
+cg: mike fernández, daniel benza, telmo garai, cesar rodrez<br>
+fx & simulation: quim gonzález<br>
+compositing: juan manuel reyes, nacho hoyos<br>
+vfx supervisor on set: adrian durán<br>
+music & sound design: isilik studio<br>
+edit house: cabin edit<br>
+editor: carlos font clos<br>
+grade: daniel devue, the trafik
+</p>
+
+    <!-- DUMP -->
+    <div class="dump">
+
+
+    </div>
+
+  </main>
+
+  <script>
+    const video = document.getElementById("gmVideo");
+
+    function toggleMute() {
+      video.muted = !video.muted;
+    }
+  </script>
+
+</body>
+</html>

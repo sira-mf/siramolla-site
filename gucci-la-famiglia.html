@@ -1,0 +1,152 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>gentle monster bold</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #fff;
+      color: #2a2a2a;
+      font-family: "Freight Text", Georgia, serif;
+      font-size: 15px;
+      line-height: 1.2;
+      text-transform: lowercase;
+    }
+
+    main {
+      padding: 12px 6px 6px;
+    }
+
+    @media (max-width: 700px) {
+      main {
+        padding-top: 32px;
+      }
+    }
+
+    p {
+      margin: 0;
+    }
+
+    .title {
+      margin-bottom: 10px;
+    }
+
+    .credits {
+      margin-bottom: 10px;
+      columns: 1;
+    }
+
+    /* MEDIA */
+
+    .media {
+      width: 100%;
+      display: block;
+    }
+
+    .hero {
+      margin-bottom: 10px;
+    }
+
+    .dump img,
+    .dump video {
+      margin: 0;
+    }
+
+    video {
+      background: #000;
+    }
+
+    /* MUTE BUTTON */
+
+    .video-wrapper {
+      position: relative;
+    }
+
+    .mute-btn {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      background: rgba(0,0,0,0.6);
+      color: #fff;
+      border: none;
+      padding: 6px 8px;
+      font-size: 12px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+  <main>
+
+    <!-- NAME -->
+    <p class="title">gucci la famiglia ss26</p>
+
+    <!-- HERO VIDEO -->
+    <div class="video-wrapper hero">
+      <video id="gmVideo" class="media" autoplay muted loop playsinline preload="auto">
+        <source src="assets/gucci-la-famiglia/gucci-la-famiglia-group.mp4" type="video/mp4">
+      </video>
+
+      <button class="mute-btn" onclick="toggleMute()">sound</button>
+    </div>
+
+    <!-- CREDITS -->
+    <p class="credits">
+client: gucci<br>
+starring: mariacarla boscono, alex consani, lila moss and many more<br>
+artistic director: demna<br>
+film director: mau morgó<br>
+make up: sam visser<br>
+hair: guido palau<br>
+dop: mauro chiarello<br>
+production company: farago projects<br>
+assistant director: clara bz<br>
+executive assistant to artistic director: telly jalily<br>
+chief of staff to artistic director: julien charrier<br>
+creative research specialist: janine reitman<br>
+creative services specialist: federico goffredo<br>
+global art buying: mathilde th<br>
+art buyers: alessia santoro, laura del sindaco, elvira cardella, alessandra quadrella<br>
+post house: olimpic<br>
+post ep: sira mollá<br>
+post coord: ___d______dd<br>
+editors: mau morgó, joan, alejo ayala, m tarkovi<br>
+graphic design: affaire projects<br>
+grade: florian martiny<br>
+compositing: juan manuel<br>
+online & versioning: juan manuel, andrea casino<br>
+sound: grotto sound
+</p>
+
+    <!-- DUMP -->
+    <div class="dump">
+
+      <video class="media" autoplay muted loop playsinline preload="auto">
+        <source src="assets/gucci-la-famiglia/gucci-la-famiglia-main.mp4" type="video/mp4">
+      </video>
+
+
+    </div>
+
+  </main>
+
+  <script>
+    const video = document.getElementById("gmVideo");
+
+    function toggleMute() {
+      video.muted = !video.muted;
+    }
+  </script>
+
+</body>
+</html>
