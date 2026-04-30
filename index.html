@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>sira mollá</title>
 
-  <!-- favicon ✳︎ -->
   <link rel="icon" href='data:image/svg+xml;utf8,
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
     <text x="50%" y="58%" text-anchor="middle" font-size="85">✳︎</text>
@@ -39,51 +38,33 @@
     img {
       display: block;
       width: 260px;
-      height: auto;
-      margin-bottom: -0.3em;
       margin-left: -10px;
       margin-top: -10px;
     }
 
-    p {
-      margin: 0;
-    }
+    p { margin: 0; }
 
-    .bio {
-      margin-bottom: 1em;
-    }
-
-    .contact {
-      margin-bottom: 1em;
-    }
+    .bio { margin-bottom: 1em; }
+    .contact { margin-bottom: 1em; }
 
     .projects a {
       color: #2a2a2a;
       cursor: pointer;
     }
 
-    .projects a:hover {
-      color: #0066ff;
-    }
+    .projects a:hover { color: #0066ff; }
 
-    .archive-title {
-      margin-bottom: 0;
-    }
-
-    .name {
-      margin-bottom: 1em;
-    }
+    .archive-title { margin-bottom: 0; }
+    .name { margin-bottom: 1em; }
 
     a {
       color: #ff00aa;
       text-decoration: underline;
     }
 
-    a:hover {
-      color: #0066ff;
-    }
+    a:hover { color: #0066ff; }
 
-    /* 🔥 MODAL */
+    /* MODAL */
 
     .modal {
       display: none;
@@ -102,6 +83,7 @@
       background: white;
       border: 1px solid #2a2a2a;
       position: relative;
+      overflow: hidden;
     }
 
     .modal iframe {
@@ -111,7 +93,38 @@
       display: block;
     }
 
-    /* 🔥 MOBILE FULLSCREEN */
+    /* X fina */
+    .close-btn {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 18px;
+      height: 18px;
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    .close-btn span {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: #2a2a2a;
+    }
+
+    .close-btn span:first-child {
+      transform: rotate(45deg);
+    }
+
+    .close-btn span:last-child {
+      transform: rotate(-45deg);
+    }
+
+    /* MOBILE FULLSCREEN + SAFE AREA */
     @media (max-width: 700px) {
       .modal {
         background: white;
@@ -121,36 +134,17 @@
         width: 100vw;
         height: 100vh;
         border: none;
+        padding-top: env(safe-area-inset-top);
+      }
+
+      .modal iframe {
+        height: calc(100% - env(safe-area-inset-top));
+      }
+
+      .close-btn {
+        top: calc(16px + env(safe-area-inset-top));
       }
     }
-.close-btn {
-  position: absolute;
-  top: 14px;
-  right: 14px;
-  width: 18px;
-  height: 18px;
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-}
-
-.close-btn span {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 100%;
-  height: 1px; /* 👈 MISMO GROSOR QUE EL BORDE */
-  background: #2a2a2a;
-}
-
-.close-btn span:first-child {
-  transform: rotate(45deg);
-}
-
-.close-btn span:last-child {
-  transform: rotate(-45deg);
-}
 
   </style>
 </head>
@@ -206,11 +200,10 @@
   <div class="modal" id="modal">
     <div class="modal-content">
 
-      <!-- 🔥 CLOSE -->
-      <button onclick="closeModal()" class="close-btn">
-  <span></span>
-  <span></span>
-</button>
+      <button class="close-btn" onclick="closeModal()">
+        <span></span>
+        <span></span>
+      </button>
 
       <iframe id="modalFrame"></iframe>
 
